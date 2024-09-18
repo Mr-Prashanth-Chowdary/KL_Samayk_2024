@@ -1,5 +1,5 @@
 "use client";
-import { Carousel, Card } from "../Cards/apple-cards-carousel";
+import { Carousel, Card } from "./apple-cards-carousel";
 
 export function AppleCardsCarouselDemo() {
   const cards = data.map((card, index) => (
@@ -50,40 +50,40 @@ const DummyContent = () => {
 
 const data = [
   {
-    category: "Artificial Intelligence",
-    title: "You can do more with AI.",
-    src: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Technical Events ",
+    title: "The Battle of the Brains Into Competition",
+    src: "https://i.pinimg.com/564x/1f/b8/bb/1fb8bb7d2df9400bc40a2e3ae08f17db.jpg",
     content: <DummyContent />,
   },
   {
-    category: "Productivity",
-    title: "Enhance your productivity.",
-    src: "https://images.unsplash.com/photo-1531554694128-c4c6665f59c2?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Non Technical Events",
+    title: "Enhance your Creativity.",
+    src: "https://i.pinimg.com/564x/18/58/44/18584477027561a661870200de9fa908.jpg",
     content: <DummyContent />,
   },
   {
-    category: "Product",
-    title: "Launching the new Apple Vision Pro.",
-    src: "https://images.unsplash.com/photo-1713869791518-a770879e60dc?q=80&w=2333&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Literary Events",
+    title: "Stories worth sharing. Stories worth hearing.",
+    src: "https://i.pinimg.com/564x/d0/5c/1c/d05c1c871974824f3d3c8f8fa5cc370b.jpg",
     content: <DummyContent />,
   },
 
   {
-    category: "Product",
-    title: "Maps for your iPhone 15 Pro Max.",
-    src: "https://images.unsplash.com/photo-1599202860130-f600f4948364?q=80&w=2515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Spot Events",
+    title: "Don't miss the action. It's going to be epic!",
+    src: "https://i.pinimg.com/736x/60/11/71/6011719a8a929811ad1f717460d2c1d3.jpg",
     content: <DummyContent />,
   },
   {
-    category: "iOS",
+    category: "Art Exhibitions",
     title: "Photography just got better.",
-    src: "https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?q=80&w=2793&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: "https://i.pinimg.com/564x/a1/40/dd/a140dd885494b80fd64e51f76dd44dee.jpg",
     content: <DummyContent />,
   },
   {
-    category: "Hiring",
-    title: "Hiring for a Staff Software Engineer",
-    src: "https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    category: "Motor Shows",
+    title: "igniting engagement take place",
+    src: "https://i.pinimg.com/564x/4c/fb/23/4cfb233f1e62e8766f68e21a6e7ed4ea.jpg",
     content: <DummyContent />,
   },
 ];

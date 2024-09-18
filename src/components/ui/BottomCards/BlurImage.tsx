@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import { useState } from "react";
 import { cn } from "../../../lib/utils";
 import { ImageProps } from "./apple-cards-carousel";
 
@@ -21,7 +22,7 @@ export const BlurImage = ({
             height={height}
             loading="lazy"
             decoding="async"
-            blurDataURL={typeof src === "string" ? src : undefined}
+            // blurDataURL={typeof src === "string" ? src : undefined}
             alt={alt ? alt : "Background of a beautiful view"}
             {...rest} />
     );

@@ -34,7 +34,7 @@ export function SpotlightPreview() {
           />
         </div>
         <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-          SAMYAK
+          SAMYAK'24
         </h1>
         <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
           KL University's 2024 techno-management fest features diverse events and workshops, fostering collaboration, enhancing skills, and celebrating a 12-year legacy of student camaraderie.

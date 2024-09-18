@@ -4,8 +4,8 @@ import {
   motion,
   useTransform,
   useScroll,
-  useVelocity,
   useSpring,
+  // useVelocity,
 } from "framer-motion";
 import { cn } from "../../../lib/utils";
 

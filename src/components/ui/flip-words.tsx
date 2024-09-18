@@ -1,6 +1,8 @@
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, LayoutGroup } from "framer-motion";
+// import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect,useState } from "react";
+// import { AnimatePresence, motion, LayoutGroup } from "framer-motion";
+import { AnimatePresence, motion} from "framer-motion";
 import { cn } from "../../lib/utils";
 
 

@@ -12,7 +12,7 @@ interface TimeLeft {
 
 export function Countdown() {
   // Set your target date here
-  const targetDate = '2024-09-18T09:26:00';
+  const targetDate = '2024-10-04T07:00:00';
 
   // Initialize the state with the time left calculated from the target date
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft(targetDate));
@@ -48,14 +48,14 @@ export function Countdown() {
   if(timeLeft.days == 0 && timeLeft.hours == 0 && timeLeft.minutes == 0 && timeLeft.seconds == 0){
     return (
       <>
-      <p className="md:text-2xl py-10 text-center text-neutral-300">Celbratoin started 🎉</p>
+      <p className="md:text-2xl py-10 text-center text-neutral-300"> Celebrations started 🎉 </p>
       </>
     )
   }
   return (
     <>
     <div className="py-10">
-    <p className='text-center md:text-2xl text-white pt-10'>Celebration starts in</p>
+    <p className='text-center md:text-2xl text-white pt-10 py-5'>Celebration starts in</p>
     <div className="flex justify-center space-x-1">
       <CardSpotlight className="flex items-center justify-center h-20 w-20">
         <div className='flex-col'>
