@@ -23,7 +23,7 @@ export const BlurImage = ({
             loading="lazy"
             decoding="async"
             // blurDataURL={typeof src === "string" ? src : undefined}
-            alt={alt ? alt : "Background of a beautiful view"}
+            alt={alt ? alt : "Background of is a beautiful view"}
             {...rest} />
     );
 };
