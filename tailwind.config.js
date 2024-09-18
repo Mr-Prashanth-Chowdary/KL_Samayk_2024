@@ -13,6 +13,12 @@ export default {
   "./src/**/*.{js,ts,jsx,tsx,mdx}",],
   theme: {
     extend: {
+      transitionDuration: {
+        '2000': '2000ms', // 2 seconds
+      },
+      fontFamily: {
+        samarkan: ['Samarkan', 'sans-serif'],
+      },
       animation: {
         spotlight: "spotlight 2s ease .75s 1 forwards",
         shimmer: "shimmer 2s linear infinite",

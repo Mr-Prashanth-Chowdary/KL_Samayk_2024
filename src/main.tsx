@@ -15,6 +15,7 @@ import { Footer } from './components/ui/Footer/Footer.tsx';
 import { LoginDemo } from './components/ui/LoginDemo.tsx';
 
 
+
 // Create the root
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -36,7 +37,7 @@ createRoot(document.getElementById('root')!).render(
             <>
             <FloatingNavDemo/>
               <SpotlightPreview />
-              <TimelineDemo />
+              <TimelineDemo></TimelineDemo>
               <LayoutGridDemo />
               <AppleCardsCarouselDemo></AppleCardsCarouselDemo>
               <Footer></Footer>

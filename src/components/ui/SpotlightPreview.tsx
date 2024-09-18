@@ -1,5 +1,6 @@
 import { Spotlight } from "./Spotlight";
 import { FlipWords } from "../ui/flip-words";
+// import img from "../../assets/samyak.png";
 import img from "../../assets/samyaklogo.png";
 // import { useNavigate } from "react-router-dom";
 
@@ -20,7 +21,7 @@ export function SpotlightPreview() {
 
   return (
     <>
-    <div className="h-[30rem] md:h-[40rem] w-full  flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+    <div className="min-h-screen md:h-[40rem] w-full  flex md:items-center md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"
@@ -36,6 +37,14 @@ export function SpotlightPreview() {
         <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
           SAMYAK'24
         </h1>
+        <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">A National Level Techno Management Fest </p>
+        <p className=" font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">atmanirbhar bharat</p>
+      
+        <h1 className="mt-5 text-2xl md:text-2xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400bg-opacity-50">
+          OCTOBER
+        </h1>
+        <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-2  h-[1px] w-full" />
+        <p className="font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">4<sup>th</sup> & 5<sup>th</sup></p>
         <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
           KL University's 2024 techno-management fest features diverse events and workshops, fostering collaboration, enhancing skills, and celebrating a 12-year legacy of student camaraderie.
         </p>
@@ -56,7 +65,7 @@ export function SpotlightPreview() {
     {/* Fliping words */}
    
     <div className=" dark:bg-neutral-950 ">
-    <div className="md:text-4xl mx-auto font-normal text-neutral-600 dark:text-neutral-400 w-10/12">
+    <div className="md:text-4xl m-h-10 mx-auto font-normal text-neutral-600 dark:text-neutral-400 w-10/12">
         A festival of
         <FlipWords words={words} /> <br />
         where excitement and celebration come together to create unforgettable memories.
