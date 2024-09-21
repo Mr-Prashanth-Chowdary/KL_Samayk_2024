@@ -38,6 +38,7 @@ export function SignupFormDemo() {
     
     try {
       const response = await axios.post('http://127.0.0.1:3000/api/auth/signup', formData);
+      console.log(response);
       alert('Signup successful! Please log in.');
       navigate("/Login"); // Redirect to login page
     } catch (error) {

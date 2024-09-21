@@ -47,8 +47,6 @@ createRoot(document.getElementById('root')!).render(
               <LayoutGridDemo />
               <AppleCardsCarouselDemo></AppleCardsCarouselDemo>
               <Footer></Footer>
-              {/* You can uncomment Countdown if needed */}
-              {/* <Countdown /> */}
             </>
           } 
         />
