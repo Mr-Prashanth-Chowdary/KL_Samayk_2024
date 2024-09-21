@@ -5,29 +5,38 @@ import { useNavigate } from 'react-router-dom';
 const Profile: React.FC = () => {
     const [userData, setUserData] = useState<any>(null);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
+        const token = localStorage.getItem('token');
+
+        // If no token, redirect to login page immediately
+        if (!token) {
+            navigate('/login');
+            return;
+        }
+
         const fetchUserData = async () => {
             try {
-                const token = localStorage.getItem('token');
                 const response = await axios.get('http://127.0.0.1:3000/api/auth/user', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 
                 setUserData(response.data);
-            } catch (error) {
-                setError('Error fetching user data.');
-                console.error('Error fetching user data:', error);
+            } catch (error: any) {
+                // Check for token expiration or invalid token (usually a 401 status)
+                if (error.response && error.response.status === 401) {
+                    localStorage.removeItem('token');  // Clear invalid token
+                }
+                // Redirect to login page on any error
+                navigate('/login');
             } finally {
                 setLoading(false);
             }
         };
 
         fetchUserData();
-    }, []);
-
-    const navigate = useNavigate();
+    }, [navigate]);
 
     const handleLogout = () => {
         localStorage.removeItem('token');
@@ -35,14 +44,6 @@ const Profile: React.FC = () => {
     };
 
     if (loading) return <div>Loading...</div>;
-    if (error) {
-        return (
-            <div>
-                <p>{error}</p>
-                <button onClick={() => navigate('/login')}>Go to Login</button>
-            </div>
-        );
-    }
 
     const { firstname, lastname, email, phoneNumber, gender, college, idNumber, department, year, paymentStatus } = userData;
 
@@ -58,12 +59,12 @@ const Profile: React.FC = () => {
                     <p className="mt-2"><strong>Name:</strong> {firstname} {lastname}</p>
                     <p><strong>Phone Number:</strong> (+91) {phoneNumber}</p>
                     <p>
-                    <strong>Payment Status: </strong>
-                    {paymentStatus === 'pending' ? (
-                    <span className='text-yellow-400'>{paymentStatus}</span>
-                    ) : (
-                    <span className='text-green-400'>{paymentStatus}</span>
-                    )}
+                        <strong>Payment Status: </strong>
+                        {paymentStatus === 'pending' ? (
+                            <span className='text-yellow-400'>{paymentStatus}</span>
+                        ) : (
+                            <span className='text-green-400'>{paymentStatus}</span>
+                        )}
                     </p>
                     {paymentStatus === 'pending' && (
                         <div className="text-center">

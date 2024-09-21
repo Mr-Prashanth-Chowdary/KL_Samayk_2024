@@ -10,7 +10,7 @@ import { Footer } from "../Footer/Footer";
 export function About() {
   
   return (
-    <div className="dark:bg-neutral-950 overflow-hidden">
+    <div className="dark:bg-neutral-950 overflow-hidden pt-16">
       <FloatingNavDemo/>
         <BlurIn
       word="About"

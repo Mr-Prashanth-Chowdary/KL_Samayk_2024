@@ -25,7 +25,7 @@ export function Footer(){
             <a href="https://www.kluniversity.in/contact.aspx" target="_blank"><li>help</li></a>
             <a href="https://www.kluniversity.in/satu.aspx" target="_blank"><li>Compliance</li></a>
             <li>Sponsors</li>
-            <li>profile</li>
+            <a href="/Profile"><li>profile</li></a>
         </ul> 
         </div>
         </div>

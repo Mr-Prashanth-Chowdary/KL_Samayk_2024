@@ -15,6 +15,7 @@ import { Footer } from './components/ui/Footer/Footer.tsx';
 import { LoginDemo } from './components/ui/LoginDemo.tsx';
 import ProtectedRoute from './components/ui/ProtectedRoute.tsx';
 import Profile from './components/ui/Profile.tsx';
+import ScrollToTop from './components/ui/ScrollToTop.tsx';
 
 
 
@@ -24,6 +25,7 @@ import Profile from './components/ui/Profile.tsx';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Router>
+      <ScrollToTop/>
       <Routes>
         {/* Route for About Page */}
         <Route path="/about" element={<About />} />
