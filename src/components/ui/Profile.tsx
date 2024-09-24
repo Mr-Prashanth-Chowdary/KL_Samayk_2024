@@ -15,12 +15,12 @@ import maleImage7 from '../../assets/male/male (6).jpg';
 
 // Female images
 import femaleImage1 from '../../assets/Female/female.jpg';
-import femaleImage2 from '../../assets/female/female (1).jpg';
-import femaleImage3 from '../../assets/female/female (2).jpg';
-import femaleImage4 from '../../assets/female/female (3).jpg';
-import femaleImage5 from '../../assets/female/female (4).jpg';
-import femaleImage6 from '../../assets/female/female (5).jpg';
-import femaleImage7 from '../../assets/female/female (6).jpg';
+import femaleImage2 from '../../assets/Female/female (1).jpg';
+import femaleImage3 from '../../assets/Female/female (2).jpg';
+import femaleImage4 from '../../assets/Female/female (3).jpg';
+import femaleImage5 from '../../assets/Female/female (4).jpg';
+import femaleImage6 from '../../assets/Female/female (5).jpg';
+import femaleImage7 from '../../assets/Female/female (6).jpg';
 import { Footer } from './Footer/Footer';
 
 const Profile: React.FC = () => {
