@@ -1,9 +1,8 @@
 import { Spotlight } from "./Spotlight";
 import { FlipWords } from "../ui/flip-words";
-// import img from "../../assets/samyak.png";
 import img from "../../assets/samyaklogo.png";
 // import { useNavigate } from "react-router-dom";
-
+import './Atmanirbharbharat.css'
 
 export function SpotlightPreview() {
     const words =[
@@ -38,13 +37,13 @@ export function SpotlightPreview() {
           SAMYAK'24
         </h1>
         <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">A National Level Techno Management Fest </p>
-        <p className=" font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">atmanirbhar bharat</p>
+        <p className="abb font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">atmanirbhar bharat</p>
       
         <h1 className="mt-5 text-2xl md:text-2xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400bg-opacity-50">
           OCTOBER
         </h1>
         <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-2  h-[1px] w-full" />
-        <p className="font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">4<sup>th</sup> & 5<sup>th</sup></p>
+        <p className="text-lg font-bold text-neutral-300 max-w-lg text-center mx-auto">4<sup>th</sup> & 5<sup>th</sup></p>
         <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
           KL University's 2024 techno-management fest features diverse events and workshops, fostering collaboration, enhancing skills, and celebrating a 12-year legacy of student camaraderie.
         </p>
