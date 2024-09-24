@@ -14,7 +14,7 @@ import maleImage6 from '../../assets/male/male (5).jpg';
 import maleImage7 from '../../assets/male/male (6).jpg';
 
 // Female images
-import femaleImage1 from '../../assets/female/female.jpg';
+// import femaleImage1 from '../../assets/female/female.jpg';
 import femaleImage2 from '../../assets/female/female (1).jpg';
 import femaleImage3 from '../../assets/female/female (2).jpg';
 import femaleImage4 from '../../assets/female/female (3).jpg';
