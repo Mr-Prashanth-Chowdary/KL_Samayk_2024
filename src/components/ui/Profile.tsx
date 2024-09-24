@@ -60,7 +60,7 @@ const Profile: React.FC = () => {
   };
 
   const handlePayment = () => {
-    navigate('/Event');
+    navigate('/Event', { state: { events } });
   };
 
   // Profile images
@@ -69,7 +69,7 @@ const Profile: React.FC = () => {
 
   if (loading) return <div>Loading...</div>;
 
-  const { firstname, lastname, email, phoneNumber, gender, college, idNumber, department, year, paymentStatus } = userData;
+  const { firstname, lastname, email, phoneNumber, gender, college, idNumber, department, year, paymentStatus, events  } = userData;
 
   const getRandomImage = () => {
     const images = gender === 'male' ? maleImages : femaleImages;
@@ -95,6 +95,7 @@ const Profile: React.FC = () => {
                 <p><strong>Email: </strong>{email}</p>
                 <p><strong>Phone: </strong>(+91) {phoneNumber}</p>
                 <p><strong>Gender: </strong>{gender}</p>
+                <p>Registered Events: {events.join(', ')}</p>
               </div>
             </div>
             <div className='text-center rounded-[20px] bg-gradient-to-b from-[rgba(170,0,0,0.5)] to-[rgba(170,0,0,0.2)] py-2 shadow-lg border border-white/20 backdrop-blur-[20px]'>

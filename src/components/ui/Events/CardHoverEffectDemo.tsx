@@ -191,12 +191,6 @@ export const projects = [
     description: "Workshop on full-custom chip design, from concept to implementation, with hands-on simulations.",
     tags: ["Tech", "Competition"],
     imagePath: "path/to/innovus-image.jpg", // Update with the actual image path
-  },
-  {
-    title: "Intel Club Workshop: Deploy with GitHub & Netlify",
-    description: "Workshop on full-custom chip design, from concept to implementation, with hands-on simulations.",
-    tags: ["Tech", "Competition"],
-    imagePath: "path/to/innovus-image.jpg", // Update with the actual image path
   },{
     title: "Intel Club Workshop: Deploy with GitHub & Netlify",
     description: "Learn to deploy projects using GitHub and Netlify in this hands-on workshop. Perfect for beginners and those wanting to enhance deployment skills.",
