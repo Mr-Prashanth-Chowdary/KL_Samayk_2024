@@ -52,6 +52,7 @@ const data = [
   {
     category: "Technical Events ",
     title: "The Battle of the Brains Into Competition",
+    date : "1234",
     src: "https://i.pinimg.com/564x/1f/b8/bb/1fb8bb7d2df9400bc40a2e3ae08f17db.jpg",
     content: <DummyContent />,
   },
@@ -72,6 +73,7 @@ const data = [
     category: "Spot Events",
     title: "Don't miss the action. It's going to be epic!",
     src: "https://i.pinimg.com/736x/60/11/71/6011719a8a929811ad1f717460d2c1d3.jpg",
+    date : "1234",
     content: <DummyContent />,
   },
   {

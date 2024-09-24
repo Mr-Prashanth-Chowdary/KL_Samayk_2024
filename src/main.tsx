@@ -19,7 +19,7 @@ import ScrollToTop from './components/ui/ScrollToTop.tsx';
 // import { BackgroundGradientAnimationDemo } from './components/ui/BackgroundGradientAnimationDemo.tsx';
 import { CardHoverEffectDemo } from './components/ui/Events/CardHoverEffectDemo.tsx';
 import { Pay } from './components/ui/Pay.tsx';
-import AuthRedirect from './components/ui/AuthRedirectProps.tsx';
+
 
 
 
@@ -33,10 +33,10 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/about" element={<About />} />
 
         {/* Route for Register Page */}
-        <Route path="/Register" element={<AuthRedirect><SignupFormDemo /></AuthRedirect> } />
+        <Route path="/Register" element={<SignupFormDemo />} />
 
         {/* Route for Login Page */}
-        <Route path="/Login" element={<AuthRedirect><LoginDemo /></AuthRedirect>} />
+        <Route path="/Login" element={<LoginDemo />} />
 
         {/* Route for Pay */}
         <Route path="/Pay" element={<ProtectedRoute><Pay /></ProtectedRoute>} />

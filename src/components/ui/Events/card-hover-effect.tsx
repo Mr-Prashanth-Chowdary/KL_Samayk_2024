@@ -82,10 +82,10 @@ export const HoverEffect = ({
       setCart([]);
       setBillingOpen(false);
 
-      // Redirect to pay page after 2 seconds
+      // Redirect to pay page after 1 seconds
         setTimeout(() => {
         navigate('/pay');
-      }, 2000);
+      }, 1000); 
     } catch (error) {
       console.error(error);
       setAlertMessage('Error sending data to the backend');

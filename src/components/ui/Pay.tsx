@@ -1,21 +1,23 @@
 import qr from '../../assets/qrcode.png';
 import { useState } from 'react';
+import {useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export function Pay() {
-  const [firstName, setFirstName] = useState('');
+  const [email, setEmail] = useState('');
   const [transactionId, setTransactionId] = useState('');
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [loading, setLoading] = useState(false); // To manage delay popup
   const [serverError, setServerError] = useState(''); // To show server-side errors
+  const [popupSuccess, setPopupSuccess] = useState(false); // To manage custom success popup
 
   const [errors, setErrors] = useState({
-    firstName: '',
+    email: '',
     transactionId: '',
     selectedImage: '',
   });
 
-  const validateName = (name: string) => /^[A-Za-z\s]+$/.test(name); // Only English letters and spaces
+  const validateEmail = (email: string) => /^[A-Za-z0-9@.]+$/.test(email); // Letters, numbers, '@', and '.'
   const validateTransactionId = (id: string) => /^[A-Za-z0-9]+$/.test(id); // Only letters and numbers
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,13 +28,13 @@ export function Pay() {
 
   const validateForm = () => {
     let isValid = true;
-    const newErrors = { firstName: '', transactionId: '', selectedImage: '' };
+    const newErrors = { email: '', transactionId: '', selectedImage: '' };
 
-    if (!firstName) {
-      newErrors.firstName = 'First Name is required.';
+    if (!email) {
+      newErrors.email = 'Email ID is required.';
       isValid = false;
-    } else if (!validateName(firstName)) {
-      newErrors.firstName = 'First name should only contain English letters and spaces.';
+    } else if (!validateEmail(email)) {
+      newErrors.email = 'Email ID should only contain letters, numbers, "@", and ".".';
       isValid = false;
     }
 
@@ -53,6 +55,11 @@ export function Pay() {
     return isValid;
   };
 
+  const navigate = useNavigate();
+  const handelDone = ()=>{
+    setPopupSuccess(false);
+    navigate('/');
+  }
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -60,7 +67,7 @@ export function Pay() {
     if (!validateForm()) return;
 
     const formData = new FormData();
-    formData.append('firstName', firstName);
+    formData.append('email', email);
     formData.append('transactionId', transactionId);
     formData.append('paymentProof', selectedImage as File);
 
@@ -76,8 +83,8 @@ export function Pay() {
       });
 
       if (response.status === 200) {
-        alert('Your payment proof has been uploaded successfully!');
-        setFirstName(''); // Clear input fields
+        setPopupSuccess(true); // Show success popup
+        setEmail(''); // Clear input fields
         setTransactionId('');
         setSelectedImage(null);
       }
@@ -115,13 +122,13 @@ export function Pay() {
         <div>
           <input 
             type="text" 
-            placeholder="First Name" 
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
+            placeholder="Email ID" 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="text-black mb-2 border border-gray-300 rounded-lg px-3 py-1"
             required
           />
-          {errors.firstName && <p className="text-red-500 text-sm">{errors.firstName}</p>}
+          {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
         </div>
 
         <div>
@@ -162,6 +169,22 @@ export function Pay() {
               <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
             </div>
             <p className="text-lg font-medium">Processing your payment, please wait...</p>
+          </div>
+        </div>
+      )}
+
+      {popupSuccess && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70">
+          <div className="bg-white p-6 rounded-lg text-center">
+            <p className="text-lg font-medium text-green-600">Your payment proof has been uploaded successfully!</p>
+            <p>Your payment will be verified and updated within 24 hours.</p>
+            <p>Join the WhatsApp group for guidance and support.</p>
+            <button
+              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+              onClick={ handelDone }
+            >
+              Done
+            </button>
           </div>
         </div>
       )}

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom"; // Import Link from react-router-dom
+import { Link, useNavigate } from "react-router-dom";
 
 export const FloatingNav = ({
   navItems,
@@ -13,11 +13,22 @@ export const FloatingNav = ({
   }[];
   className?: string;
 }) => {
-  const [visible] = useState(true); // Always set visible to true to keep the nav displayed
+  const [token, setToken] = useState<string | null>(null); // State to hold the token
 
   const navigate = useNavigate();
+
+  // Function to check if token is present in localStorage
+  const checkToken = () => {
+    const storedToken = localStorage.getItem("token");
+    setToken(storedToken); // Set the token state (null if not present)
+  };
+
+  useEffect(() => {
+    checkToken(); // Check the token when the component mounts
+  }, []);
+
   const handleRedirect = () => {
-    navigate("/Register"); // This will redirect to the Register page
+    navigate("/Register"); // Redirect to Register/Login
   };
 
   return (
@@ -25,11 +36,11 @@ export const FloatingNav = ({
       <motion.div
         initial={{
           opacity: 1,
-          y: 0, // Set the initial y to 0 so the nav is always in position
+          y: 0, // Keep the nav in position
         }}
         animate={{
-          y: 0, // Keep the y at 0 to ensure it's always visible
-          opacity: visible ? 1 : 0, // Visible is always true
+          y: 0, // Keep it visible
+          opacity: 1,
         }}
         transition={{
           duration: 0.2,
@@ -39,20 +50,32 @@ export const FloatingNav = ({
         {navItems.map((navItem: any, idx: number) => (
           <Link
             key={`link=${idx}`}
-            to={navItem.link} // Use 'to' instead of 'href' for react-router-dom's Link
+            to={navItem.link}
             className="relative text-neutral-400 hover:text-neutral-300 items-center flex space-x-1"
           >
             <span className="block sm:hidden">{navItem.icon}</span>
             <span className="hidden sm:block text-sm">{navItem.name}</span>
           </Link>
         ))}
-        <button
-          onClick={handleRedirect}
-          className="border text-sm font-medium relative border-neutral-300 text-white px-4 py-2 rounded-full"
-        >
-          <span>Login/Register</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
-        </button>
+
+        {/* Conditionally render Login/Register or Profile */}
+        {token ? (
+          <Link
+            to="/Profile" // Assuming "/Profile" is your profile page
+            className="border text-sm font-medium relative border-neutral-300 text-white px-4 py-2 rounded-full"
+          >
+            <span>Profile</span>
+            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
+          </Link>
+        ) : (
+          <button
+            onClick={handleRedirect}
+            className="border text-sm font-medium relative border-neutral-300 text-white px-4 py-2 rounded-full"
+          >
+            <span>Login/Register</span>
+            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
+          </button>
+        )}
       </motion.div>
     </AnimatePresence>
   );
